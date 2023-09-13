@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
 const vue = require("vue");
+require("./button.css");
 const _sfc_main = /* @__PURE__ */ vue.defineComponent({
   ...{
     name: "LogButton"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './mesh.less'
 import {ref,onMounted,toRefs, type PropType,watchEffect,onUnmounted} from 'vue'
 import {generateGrandients,type ModeSelection} from '../../../utils/mesh'
 defineOptions({
@@ -64,12 +65,3 @@ watchEffect(()=>{
 <template>
  <div ref="grandientBox" class="grandientBox"></div>
 </template>
-
-<style scoped>
-    .grandientBox{
-        width:100%;
-        height:100%;
-        min-width:32px;
-        min-height:32px;
-    }
-</style>

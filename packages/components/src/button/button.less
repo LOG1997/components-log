@@ -1,26 +1,3 @@
-<script lang="ts" setup>
-import { computed } from "vue";
-import './button.less'
-defineOptions({
-    name: 'LogButton',
-});
-
-type ButtonProps = {
-  type?: string;
-};
-
-const buttonProps=defineProps<ButtonProps>();
-
-const buttonStyle = computed(() => {
-  return `log-btn-${buttonProps.type}`;
-});
-</script>
-
-<template>
-    <button class="log-btn" :class="buttonStyle">测试按钮</button>
-  </template>
-  
-<style scoped>
 .log-btn {
     display: inline-block;
     line-height: 1;
@@ -52,4 +29,3 @@ const buttonStyle = computed(() => {
         color: #fff;
     }
 }
-</style>

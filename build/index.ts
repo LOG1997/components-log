@@ -13,8 +13,8 @@ export const buildStyle = () => {
     return src(`${componentPath}/src/**/**.less`)
         .pipe(less())
         .pipe(autoprefixer())
-        .pipe(dest(`${pkgPath}/logui/lib/src`))
-        .pipe(dest(`${pkgPath}/logui/es/src`))
+        .pipe(dest(`${pkgPath}/logui/lib/components/src`))
+        .pipe(dest(`${pkgPath}/logui/es/components/src`))
 }
 //打包组件
 export const buildComponent = async () => {

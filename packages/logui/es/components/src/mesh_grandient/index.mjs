@@ -1,4 +1,4 @@
-import _MeshGradient from "./mesh_grandient.vue.mjs";
+import _sfc_main from "./mesh_grandient.vue.mjs";
 const withInstall = (component) => {
   component.install = (app) => {
     const name = component.name;
@@ -6,7 +6,7 @@ const withInstall = (component) => {
   };
   return component;
 };
-const MeshGradient = withInstall(_MeshGradient);
+const MeshGradient = withInstall(_sfc_main);
 export {
   MeshGradient,
   MeshGradient as default

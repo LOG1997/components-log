@@ -1,4 +1,5 @@
 import { defineComponent, computed, openBlock, createElementBlock, normalizeClass } from "vue";
+import "./button.css";
 const _sfc_main = /* @__PURE__ */ defineComponent({
   ...{
     name: "LogButton"

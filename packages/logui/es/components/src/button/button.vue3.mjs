@@ -1,4 +1,4 @@
-const button_vue_vue_type_style_index_0_scoped_a5db9f3e_lang = "";
+const button_vue_vue_type_style_index_0_scoped_f2133976_lang = "";
 export {
-  button_vue_vue_type_style_index_0_scoped_a5db9f3e_lang as default
+  button_vue_vue_type_style_index_0_scoped_f2133976_lang as default
 };
