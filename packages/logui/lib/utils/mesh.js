@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const colors = require("./colors.js");
-const generateGrandients = (baseColor = [243, 98, 67], position = [], previousPosition, speed) => {
+const generateGrandients = (baseColor = [243, 98, 67], position = [], previousPosition, speed, mode) => {
   if (typeof baseColor === "string") {
     baseColor = colors.hex.toHsl(baseColor);
   }
@@ -19,14 +19,14 @@ const generateGrandients = (baseColor = [243, 98, 67], position = [], previousPo
       positionX = getRandomPosition();
       positionY = getRandomPosition();
     } else {
-      if (position[index][0] >= 100) {
+      if (position[index][0] >= 120) {
         previousPosition[index][0] = 100;
-      } else if (position[index][0] <= 1) {
+      } else if (position[index][0] <= -20) {
         previousPosition[index][0] = 0;
       }
-      if (position[index][1] >= 100) {
+      if (position[index][1] >= 120) {
         previousPosition[index][1] = 100;
-      } else if (position[index][1] <= 1) {
+      } else if (position[index][1] <= -20) {
         previousPosition[index][1] = 0;
       }
       if (previousPosition[index][0]) {
@@ -54,11 +54,10 @@ const generateGrandientsColor = (mode = "analogous", baseColor = [243, 98, 67]) 
   }
   if (baseColor.length == 0)
     baseColor = [243, 98, 67];
-  const colorHSL = baseColor;
+  const hsl = Array.from(baseColor);
   const hslArray = [];
   if (mode == "analogous") {
     for (let i = 0; i < 6; i++) {
-      const hsl = colorHSL;
       hsl[0] = hsl[0] + 30;
       if (hsl[0] > 360) {
         hsl[0] = hsl[0] - 360;
@@ -66,6 +65,30 @@ const generateGrandientsColor = (mode = "analogous", baseColor = [243, 98, 67]) 
       hslArray.push("hsl(" + hsl[0] + "," + hsl[1] + "%," + hsl[2] + "%)");
     }
   }
-  return { randomColors: hslArray, bottomColor: "hsl(" + colorHSL[0] + "," + colorHSL[1] + "%," + colorHSL[2] + "%)" };
+  if (mode == "monochromatic") {
+    for (let i = 0; i < 6; i++) {
+      if (i % 2 == 0) {
+        hsl[1] = hsl[1] + 30;
+        hsl[1] >= 100 ? hsl[1] = hsl[1] - 100 : null;
+      } else {
+        hsl[2] = hsl[2] + 30;
+        hsl[2] >= 100 ? hsl[2] = hsl[2] - 100 : null;
+      }
+      hslArray.push("hsl(" + hsl[0] + "," + hsl[1] + "%," + hsl[2] + "%)");
+    }
+  }
+  if (mode == "triad") {
+    for (let i = 0; i < 6; i++) {
+      if (i % 2 == 0) {
+        hsl[1] = hsl[1] + 30;
+        hsl[1] >= 100 ? hsl[1] = hsl[1] - 100 : null;
+      } else {
+        hsl[2] = hsl[2] + 30;
+        hsl[2] >= 100 ? hsl[2] = hsl[2] - 100 : null;
+      }
+      hslArray.push("hsl(" + hsl[0] + "," + hsl[1] + "%," + hsl[2] + "%)");
+    }
+  }
+  return { randomColors: hslArray, bottomColor: "hsl(" + baseColor[0] + "," + baseColor[1] + "%," + baseColor[2] + "%)" };
 };
 exports.generateGrandients = generateGrandients;

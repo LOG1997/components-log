@@ -1,6 +1,6 @@
 import { h } from 'vue';
 import Theme from 'vitepress/theme';
-import logzzui from 'logzzui'
+import componentsLog from '@logui/components'
 import './styles/vars.css';
 // import HomeSponsors from './components/HomeSponsors.vue';
 // import AsideSponsors from './components/AsideSponsors.vue';
@@ -18,6 +18,6 @@ export default {
     },
     enhanceApp({ app }) {
         app.component('SvgImage', SvgImage);
-        app.use(logzzui)
+        app.use(componentsLog)
     },
 };

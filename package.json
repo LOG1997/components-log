@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "pnpm -C play dev",
+        "build:play": "pnpm -C play build",
         "build:logui": "gulp -f build/index.ts",
         "publish:logui": "gulp -f build/script/publish/index.ts",
         "docs:dev": "vitepress dev doc",
@@ -16,6 +17,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@iconify-json/logos": "^1.1.36",
         "@types/gulp": "^4.0.13",
         "@types/gulp-autoprefixer": "^0.0.34",
         "@types/gulp-less": "^0.0.33",
@@ -31,12 +33,17 @@
         "release-it": "^16.1.5",
         "sucrase": "^3.34.0",
         "typescript": "^5.1.6",
+        "unocss": "^0.55.7",
+        "unplugin-auto-import": "^0.16.6",
+        "unplugin-vue-components": "^0.25.2",
         "vite": "^4.4.9",
         "vite-plugin-dts": "^1.4.1",
         "vitest": "^0.34.2",
         "vue": "^3.3.4"
     },
     "dependencies": {
-        "vitepress": "1.0.0-alpha.64"
+        "element-plus": "^2.3.12",
+        "vitepress": "1.0.0-alpha.64",
+        "vue-router": "^4.2.4"
     }
 }

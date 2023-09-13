@@ -1,28 +1,35 @@
 <script setup lang="ts">
-import {ref,onMounted,toRefs} from 'vue'
-import {generateGrandients} from '../../../utils/mesh'
+import {ref,onMounted,toRefs, type PropType,watchEffect,onUnmounted} from 'vue'
+import {generateGrandients,type ModeSelection} from '../../../utils/mesh'
 defineOptions({
     name: 'LogMesh',
 });
 const props=defineProps({
     baseColor:{
         type:String,
-        default:'#60DE28'
+        default:'#bd93f9'
     },
     speed:{
         type:Number,
-        default:0.2
+        default:0.1
+    },
+    mode:{
+        type:Object as PropType<ModeSelection>,
+        default:'analogous'
+    },
+    animation:{
+        ttype:Boolean,
+        default:true
     }
 })
 const localProps=toRefs(props)
 const grandientBox = ref();
-let start:number|undefined, previousTimeStamp:number;
-let done = false;
+let done = ref(false)
 const positionInit=ref<number[][]>([])
 const previousPositionInit=ref<number[][]>([])
 const getGrandient=(color:number[]|string=[])=>{
     const css=grandientBox.value.style;
-    const {grandients,baseColor,position,previousPosition}=generateGrandients(color,positionInit.value,previousPositionInit.value,localProps.speed.value);
+    const {grandients,baseColor,position,previousPosition}=generateGrandients(color,positionInit.value,previousPositionInit.value,localProps.speed.value,localProps.mode.value);
     if(position.length>=1){
         positionInit.value=position;
         previousPositionInit.value=previousPosition;
@@ -31,21 +38,28 @@ const getGrandient=(color:number[]|string=[])=>{
     css.backgroundColor=baseColor;
 }
 
-const step=async(timeStamp:number)=>{
-    if (start === undefined) {
-    start = timeStamp;
-  }
-
-  if (previousTimeStamp !== timeStamp) {
+const step=async()=>{
     getGrandient(localProps.baseColor.value)
-  }
-    if (!done) {
+    if (localProps.animation.value&&!done.value) {
       requestAnimationFrame(step);
     }
 }
 onMounted(async()=>{
      requestAnimationFrame(step)
 })
+onUnmounted(()=>{
+    done.value=true
+})
+watchEffect(()=>{
+    if(localProps.animation.value==true){
+        console.log('😔localProps.animation.value:',localProps.animation.value)
+        requestAnimationFrame(step)
+    }
+   else if(localProps.baseColor.value){
+        requestAnimationFrame(step)
+    }
+})
+
 </script>
 
 <template>
