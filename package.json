@@ -1,7 +1,7 @@
 {
     "name": "components-log",
-    "version": "1.0.0",
-    "description": "",
+    "version": "0.0.1",
+    "description": "A Vue3's component for generating CSS Mesh Gradients",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,20 @@
         "docs:build": "vitepress build doc",
         "docs:preview": "vitepress preview"
     },
-    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LOG1997/components-log"
+    },
+    "homepage": "https://log1997.github.io/components-log/#/",
+    "keywords": [
+        "gradient",
+        "vue3",
+        "color",
+        "mesh gradient",
+        "mesh",
+        "component",
+        "vue3 component"
+    ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
