@@ -30,6 +30,10 @@
         "component",
         "vue3 component"
     ],
+    "files": [
+        "/packages/logui",
+        "README.md"
+    ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
