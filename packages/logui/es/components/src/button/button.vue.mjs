@@ -1,25 +1,7 @@
-import { defineComponent, computed, openBlock, createElementBlock, normalizeClass } from "vue";
-import "./button.css";
-const _sfc_main = /* @__PURE__ */ defineComponent({
-  ...{
-    name: "LogButton"
-  },
-  __name: "button",
-  props: {
-    type: {}
-  },
-  setup(__props) {
-    const buttonProps = __props;
-    const buttonStyle = computed(() => {
-      return `log-btn-${buttonProps.type}`;
-    });
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("button", {
-        class: normalizeClass(["log-btn", buttonStyle.value])
-      }, "测试按钮", 2);
-    };
-  }
-});
+import _sfc_main from "./button.vue2.mjs";
+import "./button.vue3.mjs";
+import _export_sfc from "../../../_virtual/_plugin-vue_export-helper.mjs";
+const _Button = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a5db9f3e"]]);
 export {
-  _sfc_main as default
+  _Button as default
 };
