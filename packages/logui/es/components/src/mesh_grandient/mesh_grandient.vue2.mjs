@@ -54,7 +54,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     watchEffect(() => {
       if (localProps.animation.value == true) {
-        console.log("😔localProps.animation.value:", localProps.animation.value);
         requestAnimationFrame(step);
       } else if (localProps.baseColor.value) {
         requestAnimationFrame(step);
@@ -64,7 +63,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("div", {
         ref_key: "grandientBox",
         ref: grandientBox,
-        class: "grandientBox w-full h-full min-w-32 min-h-32"
+        class: "grandientBox"
       }, null, 512);
     };
   }

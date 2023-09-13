@@ -52,7 +52,6 @@ onUnmounted(()=>{
 })
 watchEffect(()=>{
     if(localProps.animation.value==true){
-        console.log('😔localProps.animation.value:',localProps.animation.value)
         requestAnimationFrame(step)
     }
    else if(localProps.baseColor.value){
@@ -63,7 +62,7 @@ watchEffect(()=>{
 </script>
 
 <template>
- <div ref="grandientBox" class="grandientBox w-full h-full min-w-32 min-h-32"></div>
+ <div ref="grandientBox" class="grandientBox"></div>
 </template>
 
 <style scoped>

@@ -2,7 +2,7 @@
     "name": "components-log",
     "version": "0.0.1",
     "description": "A Vue3's component for generating CSS Mesh Gradients",
-    "main": "index.js",
+    "main": "packages/logui/es/components/index.mjs",
     "publishConfig": {
         "access": "public"
     },
@@ -35,7 +35,7 @@
         "README.md"
     ],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@iconify-json/logos": "^1.1.36",
         "@types/gulp": "^4.0.13",
