@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "A Vue3's component for generating CSS Mesh Gradients",
     "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "pnpm -C play dev",
