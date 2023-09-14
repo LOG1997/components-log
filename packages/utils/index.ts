@@ -1,1 +1,1 @@
-export { generateGrandients, ModeSelection } from './mesh'
+export { generateGrandients, type ModeSelection } from './mesh'

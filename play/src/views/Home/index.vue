@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { MeshGradient } from "@logui/components";
+import { Mesh } from "@logui/components";
 // import { MeshGradient } from '../../../../packages/logui/es/components'
 import Button from './components/Button/button.vue'
-import { getRandomColor } from '@/utils/color'
+import { getRandomColor } from '../../utils/color'
 
 const colorRef = ref()
 const color = ref('#bd93f9')
@@ -43,7 +43,7 @@ onMounted(() => {
             </Button>
         </div>
         <div class="mesh-box shadow-xl md:w-90 md:h-90 <md:w-2/3 <md:aspect-ratio-square">
-            <MeshGradient :base-color="color" mode="monochromatic" :animation="isAnimation"></MeshGradient>
+            <Mesh :base-color="color" mode="monochromatic" :animation="isAnimation"></Mesh>
         </div>
         <div class="info text-gray-50 pt-12">
             <el-switch v-model="isAnimation" active-text="animation" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" inactive-text="static" inline-prompt />
