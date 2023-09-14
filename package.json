@@ -3,11 +3,7 @@
     "version": "0.0.5",
     "description": "A Vue3's component for generating CSS Mesh Gradients",
     "main": "index.js",
-    "module": "packages/logui/lib/components/index.js",
-    "typings": "packages/logui/es/components/index.d.ts",
-    "publishConfig": {
-        "access": "public"
-    },
+    "type": "module",
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx,vue}": [
             "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
@@ -39,11 +35,11 @@
         "vue3 component"
     ],
     "files": [
-        "/packages/logui/es",
+        "packages/logui/es",
         "packages/logui/lib",
         "README.md"
     ],
-    "author": "",
+    "author": "log1997",
     "license": "MIT",
     "devDependencies": {
         "@iconify-json/logos": "^1.1.36",
