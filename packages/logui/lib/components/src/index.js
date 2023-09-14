@@ -1,6 +1,1 @@
-"use strict";
-Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-const index = require("./button/index.js");
-const index$1 = require("./mesh_grandient/index.js");
-exports.Button = index.Button;
-exports.MeshGradient = index$1.MeshGradient;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("./button/index.js"),t=require("./mesh_grandient/index.js");exports.Button=e.Button;exports.Mesh=t.Mesh;

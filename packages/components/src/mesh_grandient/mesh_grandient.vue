@@ -1,27 +1,22 @@
 <script setup lang="ts">
-import './mesh.less'
 import {ref,onMounted,toRefs, type PropType,watchEffect,onUnmounted} from 'vue'
-import {generateGrandients,type ModeSelection} from '../../../utils/mesh'
+import {generateGrandients,ModeSelection} from '@logui/utils'
+import './mesh.less'
+
 defineOptions({
     name: 'LogMesh',
 });
-const props=defineProps({
-    baseColor:{
-        type:String,
-        default:'#bd93f9'
-    },
-    speed:{
-        type:Number,
-        default:0.1
-    },
-    mode:{
-        type:Object as PropType<ModeSelection>,
-        default:'analogous'
-    },
-    animation:{
-        ttype:Boolean,
-        default:true
-    }
+type MeshProps={
+    baseColor:string
+    speed:number
+    mode:ModeSelection
+    animation:boolean
+}
+const props=withDefaults(defineProps<MeshProps>(),{
+    baseColor:'#bd93f9',
+    speed:0.1,
+    mode:'analogous',
+    animation:true
 })
 const localProps=toRefs(props)
 const grandientBox = ref();

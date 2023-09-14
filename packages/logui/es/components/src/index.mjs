@@ -1,6 +1,6 @@
-import { Button } from "./button/index.mjs";
-import { MeshGradient } from "./mesh_grandient/index.mjs";
+import { Button as t } from "./button/index.mjs";
+import { Mesh as f } from "./mesh_grandient/index.mjs";
 export {
-  Button,
-  MeshGradient
+  t as Button,
+  f as Mesh
 };

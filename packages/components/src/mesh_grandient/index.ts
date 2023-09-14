@@ -1,4 +1,4 @@
-import _MeshGradient from "./mesh_grandient.vue";
+import _Mesh from "./mesh_grandient.vue";
 import type { App, Plugin } from "vue";
 
 type SFCWithInstall<T> = T & Plugin;
@@ -10,5 +10,5 @@ const withInstall = <T,>(component: T) => {
     };
     return component as SFCWithInstall<T>;
 };
-export const MeshGradient = withInstall(_MeshGradient);
-export default MeshGradient;
+export const Mesh = withInstall(_Mesh);
+export default Mesh;

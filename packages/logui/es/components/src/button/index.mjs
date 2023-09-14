@@ -1,13 +1,9 @@
-import _Button from "./button.vue.mjs";
-const withInstall = (component) => {
-  component.install = (app) => {
-    const name = component.name;
-    app.component(name, component);
-  };
-  return component;
-};
-const Button = withInstall(_Button);
+import s from "./button.vue.mjs";
+const l = (t) => (t.install = (a) => {
+  const n = t.name;
+  a.component(n, t);
+}, t), o = l(s);
 export {
-  Button,
-  Button as default
+  o as Button,
+  o as default
 };

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { MeshGradient } from "@logui/components";
+// import { MeshGradient } from "@logui/components";
+import { MeshGradient } from '../../../../packages/logui/es/components'
 import Button from './components/Button/button.vue'
 import { getRandomColor } from '@/utils/color'
 

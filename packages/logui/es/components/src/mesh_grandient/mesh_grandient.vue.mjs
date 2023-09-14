@@ -1,74 +1,37 @@
-import { defineComponent, toRefs, ref, onMounted, onUnmounted, watchEffect, openBlock, createElementBlock } from "vue";
+import { defineComponent as v, toRefs as g, ref as n, onMounted as _, onUnmounted as b, watchEffect as B, openBlock as C, createElementBlock as h } from "vue";
+import { generateGrandients as k } from "../../../utils/mesh.mjs";
 import "./mesh.css";
-import { generateGrandients } from "../../../utils/mesh.mjs";
-const _sfc_main = /* @__PURE__ */ defineComponent({
-  ...{
-    name: "LogMesh"
-  },
+const F = /* @__PURE__ */ v({
+  name: "LogMesh",
   __name: "mesh_grandient",
   props: {
-    baseColor: {
-      type: String,
-      default: "#bd93f9"
-    },
-    speed: {
-      type: Number,
-      default: 0.1
-    },
-    mode: {
-      type: Object,
-      default: "analogous"
-    },
-    animation: {
-      ttype: Boolean,
-      default: true
-    }
+    baseColor: { default: "#bd93f9" },
+    speed: { default: 0.1 },
+    mode: { default: "analogous" },
+    animation: { type: Boolean, default: !0 }
   },
-  setup(__props) {
-    const props = __props;
-    const localProps = toRefs(props);
-    const grandientBox = ref();
-    let done = ref(false);
-    const positionInit = ref([]);
-    const previousPositionInit = ref([]);
-    const getGrandient = (color = []) => {
-      const css = grandientBox.value.style;
-      const { grandients, baseColor, position, previousPosition } = generateGrandients(color, positionInit.value, previousPositionInit.value, localProps.speed.value, localProps.mode.value);
-      if (position.length >= 1) {
-        positionInit.value = position;
-        previousPositionInit.value = previousPosition;
-      }
-      css.backgroundImage = grandients;
-      css.backgroundColor = baseColor;
+  setup(c) {
+    const e = g(c), a = n();
+    let s = n(!1);
+    const r = n([]), i = n([]), m = (l = []) => {
+      const t = a.value.style, { grandients: d, baseColor: p, position: u, previousPosition: f } = k(l, r.value, i.value, e.speed.value, e.mode.value);
+      u.length >= 1 && (r.value = u, i.value = f), t.backgroundImage = d, t.backgroundColor = p;
+    }, o = async () => {
+      m(e.baseColor.value), e.animation.value && !s.value && requestAnimationFrame(o);
     };
-    const step = async () => {
-      getGrandient(localProps.baseColor.value);
-      if (localProps.animation.value && !done.value) {
-        requestAnimationFrame(step);
-      }
-    };
-    onMounted(async () => {
-      requestAnimationFrame(step);
-    });
-    onUnmounted(() => {
-      done.value = true;
-    });
-    watchEffect(() => {
-      if (localProps.animation.value == true) {
-        requestAnimationFrame(step);
-      } else if (localProps.baseColor.value) {
-        requestAnimationFrame(step);
-      }
-    });
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", {
-        ref_key: "grandientBox",
-        ref: grandientBox,
-        class: "grandientBox"
-      }, null, 512);
-    };
+    return _(async () => {
+      requestAnimationFrame(o);
+    }), b(() => {
+      s.value = !0;
+    }), B(() => {
+      (e.animation.value == !0 || e.baseColor.value) && requestAnimationFrame(o);
+    }), (l, t) => (C(), h("div", {
+      ref_key: "grandientBox",
+      ref: a,
+      class: "grandientBox"
+    }, null, 512));
   }
 });
 export {
-  _sfc_main as default
+  F as default
 };

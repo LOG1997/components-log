@@ -1,15 +1,1 @@
-"use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
-const index$3 = require("./src/index.js");
-const index$1 = require("./src/button/index.js");
-const index$2 = require("./src/mesh_grandient/index.js");
-const index = {
-  install: (app) => {
-    for (const key in index$3) {
-      app.use(index$3[key]);
-    }
-  }
-};
-exports.Button = index$1.Button;
-exports.MeshGradient = index$2.MeshGradient;
-exports.default = index;
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("./src/index.js"),i=require("./src/button/index.js"),o=require("./src/mesh_grandient/index.js"),s={install:t=>{for(const n in e)t.use(e[n])}};exports.Button=i.Button;exports.Mesh=o.Mesh;exports.default=s;

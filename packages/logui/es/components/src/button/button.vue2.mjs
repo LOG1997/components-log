@@ -1,25 +1,18 @@
-import { defineComponent, computed, openBlock, createElementBlock, normalizeClass } from "vue";
+import { defineComponent as n, computed as r, openBlock as c, createElementBlock as p, normalizeClass as s } from "vue";
 import "./button.css";
-const _sfc_main = /* @__PURE__ */ defineComponent({
-  ...{
-    name: "LogButton"
-  },
+const b = /* @__PURE__ */ n({
+  name: "LogButton",
   __name: "button",
   props: {
     type: {}
   },
-  setup(__props) {
-    const buttonProps = __props;
-    const buttonStyle = computed(() => {
-      return `log-btn-${buttonProps.type}`;
-    });
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("button", {
-        class: normalizeClass(["log-btn", buttonStyle.value])
-      }, "测试按钮", 2);
-    };
+  setup(t) {
+    const o = t, e = r(() => `log-btn-${o.type}`);
+    return (u, a) => (c(), p("button", {
+      class: s(["log-btn", e.value])
+    }, "测试按钮", 2));
   }
 });
 export {
-  _sfc_main as default
+  b as default
 };

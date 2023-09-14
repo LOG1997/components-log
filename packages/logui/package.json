@@ -1,0 +1,27 @@
+{
+    "name": "components-log",
+    "version": "0.0.4",
+    "description": "A Vue3's component for generating CSS Mesh Gradients",
+    "main": "lib/components/index.js",
+    "module": "es/components/index.mjs",
+    "typings": "lib/components/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LOG1997/components-log"
+    },
+    "keywords": [
+        "gradient",
+        "vue3",
+        "color",
+        "mesh gradient",
+        "mesh",
+        "component",
+        "vue3 component"
+    ],
+    "files": [
+        "es",
+        "lib"
+    ],
+    "author": "log1997",
+    "license": "MIT"
+}
