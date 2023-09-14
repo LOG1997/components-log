@@ -21,11 +21,11 @@
 * 使用
     ```ts
     <script setup lang="ts">
-    import { MeshGradient } from 'components-log';
+    import { Mesh } from 'components-log';
     </script>
 
     <template>
-        <MeshGradient></MeshGradient>
+        <Mesh></Mesh>
     </template>
     ```
 

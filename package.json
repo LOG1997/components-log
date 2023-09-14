@@ -16,6 +16,8 @@
         "build:play": "pnpm -C play build",
         "build:logui": "gulp -f build/index.ts",
         "publish:logui": "gulp -f build/script/publish/index.ts",
+        "version:patch": "pnpm -C packages/logui version:patch",
+        "publish:end": "pnpm -C packages/logui publish",
         "docs:dev": "vitepress dev doc",
         "docs:build": "vitepress build doc",
         "docs:preview": "vitepress preview"
