@@ -1,6 +1,6 @@
 {
     "name": "components-log",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A Vue3's component for generating CSS Mesh Gradients",
     "main": "index.js",
     "module": "packages/logui/lib/components/index.js",
